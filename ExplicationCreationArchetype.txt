@@ -1,0 +1,35 @@
+
+
+	#########################################################################
+	#									#
+	# 	Tuto création d'archetype à partir d'un projet existant 	#
+	#									#
+	#########################################################################
+
+
+
+   ** Création archetype **
+
+1) Créer un projet maven normal que l'on architecture comme on veut pour qu'il soit la base de l'archetype
+2) A la racine de ce projet, faire un "mvn archetype:create-from-project" => Un projet d'archetype est créé à l'emplacement "target/generated-sources/archetype", avec son propre Pom.
+3) (Optionnel): On peut paramétrer certaines choses de l'archetype (-> se renseigner d'avantage sur le net)
+4) Aller à l'emplacement "target/generated-sources/archetype", et faire un "mvn install" pour l'installer en local (ou "mvn deploy" pour installer sur un repo distant)
+
+
+
+   ** Utilisation archetype **
+
+
+1) Voici la commande à utiliser pour créer son projet à partir de l'archetype:
+
+mvn archetype:generate \
+-DarchetypeGroupId=fr.soat \
+-DarchetypeArtifactId=project-template-archetype \
+-DarchetypeVersion=0.0.1-SNAPSHOT \
+-DgroupId=fr.soat \
+-DartifactId=test-archetype
+
+
+
+
+PS: Lien expliquant la creation d'archetypes ==> https://blog.soat.fr/2011/06/maven-pour-les-nuls-les-archetypes/
